@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="card" style=" margin-top: 20px">
+    <div class="card-header">
+        <h1>BMI Calculator</h1>
+        <p class="card-text">A BMI of 25.0 or more is overweight, while the healthy range is 18.5 to 24.9. BMI applies to most adults 18-65 years.</p>
+    </div>
+    <div class="card-body">
+
+        <form method="post">
+            <div class="form-group">
+                <div class="row">
+                    <label asp-for="information.Weight" class="col-lg-4"></label>
+                    <input type="text" asp-for="information.Weight" class="col-lg-2" />
+                </div>
+                <div class="row">
+                    <label asp-for="information.Height" class="col-lg-4"></label>
+                    <input type="text" asp-for="information.Height" class="col-lg-2" />
+                </div>
+
+                <div class="row">
+                    <input type="submit" value="Submit" asp-action="Index" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer">
+
+        <div class="row">
+            <label asp-for="information.Result" class="col-lg-4"></label>
+            <input type="number" disabled="disabled" asp-for="information.Result" class="col-lg-2" />
+        </div>
+    </div>
+</div>
